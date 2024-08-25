@@ -8,6 +8,17 @@ function convertToRoman(num) {
       5:['V', 5], 
       6:['I', 1]
     };
+	let result = '';
+
+    // Iterate through the obj array and build the Roman numeral
+    for (const [symbol, value] of obj) {
+        while (num >= value) {
+            result += symbol;
+            num -= value;
+        }
+    }
+
+    return result;
 
   //your code here
 
